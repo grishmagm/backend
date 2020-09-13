@@ -1,9 +1,9 @@
 [
   {
     "_id": "5e8ead3202581a15d46b5ea2",
-    "officeLocation": ["Dehradun"],
+    "officeLocation": ["Banglore"],
     "mapAnnotation": [],
-    "address": "KIB Technologies,near uttranchal electricals, opposite Sidra Guest house, Majra, Dehradun, Uttarakhand 248001",
+    "address": "near uttranchal electricals, opposite Sidra Guest house, Majra, Dehradun, Uttarakhand 248001",
     "email": "info.kibtech@gmail.com",
     "description": "its Fine",
     "facebookUrl": "https://www.facebook.com/AyushTyagi007",
@@ -11,12 +11,12 @@
     "twitterUrl": "",
     "instagramUrl": "",
     "phoneNumber": 8077600748,
-    "aboutUs": "KibKart is an ecommerce platform.",
-    "storeName": "KIB KART",
+    "aboutUs": "Lemon Chilli is an ecommerce platform.",
+    "storeName": "Lemon Chilli",
     "dasboardLogo": {
-      "imageUrl": "https://ik.imagekit.io/rdk2lehvjn/1599649361145_original_WERTYU_Csarp_Gpi.png",
+      "imageUrl": "https://ik.imagekit.io/hmmb9yznex/Logo_15vhOWNmQ.png",
       "imageId": "5ebd50bdb8db3d4092c02388",
-      "filePath": "/1599649361145_original_WERTYU_Csarp_Gpi.png"
+      "filePath": "/Logo_15vhOWNmQ.png"
     },
     "userApp": {
       "imageUrl": "https://ik.imagekit.io/rdk2lehvjn/1599644550963_original_kibkart_X1oYQlOU9.png",
@@ -29,17 +29,17 @@
       "filePath": "/1599644561681_original_208_36_yYENgOAvQ.png"
     },
     "deliveryAppLogo": {
-      "imageUrl": "https://ik.imagekit.io/rdk2lehvjn/1599644550963_original_kibkart_X1oYQlOU9.png",
+      "imageUrl": "https://ik.imagekit.io/hmmb9yznex/Logo_15vhOWNmQ.png",
       "imageId": "5ebd50b48577d050631dc565",
-      "filePath": "/1599644550963_original_kibkart_X1oYQlOU9.png"
+      "filePath": "/Logo_15vhOWNmQ.png"
     },
     "createdAt": "2020-04-09T05:05:54.359Z",
     "updatedAt": "2020-05-15T11:27:16.037Z",
     "__v": 0,
     "iconLogo": {
       "imageId": "5ebd50c5868e471ddea38de1",
-      "imageUrl": "https://ik.imagekit.io/rdk2lehvjn/1599644574261_original_logo_IAjtg83bG.png",
-      "filePath": "/1599644574261_original_logo_IAjtg83bG.png"
+      "imageUrl": "https://ik.imagekit.io/hmmb9yznex/Logo_small_9rodhWKpY.png",
+      "filePath": "/Logo_small_9rodhWKpY.png"
     }
   }
 ]
