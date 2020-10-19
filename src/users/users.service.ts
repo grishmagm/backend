@@ -189,11 +189,13 @@ export class UsersService {
 
     // get email verification fields
     private getEmailVerificationFields(verificationId: string) {
+        console.log("MAIL CALLED !");
         const body: string =
             'Registration has been successful. Please follow the link to verify your email';
         const subject: string = 'Account verification';
         let htmlData: string = '';
         let url: string = '';
+        console.log("MAIL CREATED !");
         if (process.env.NODE_ENV === 'production') {
             url=process.env.BASE_URL_PRODUCTION+`/users/verify/email/${verificationId}`
             htmlData = `    <p>${body}</p><br>
@@ -206,6 +208,7 @@ export class UsersService {
                             <a href="${url}" target="_blank">VERIFY ACCOUNT</a>
                         `;
         }
+        console.log("MAIL RETURN !");
         return {body, subject, htmlData};
     }
 

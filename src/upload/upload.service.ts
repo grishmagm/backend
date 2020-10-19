@@ -222,6 +222,7 @@ export class UploadService {
     }
     // sends email to the recipient
     public async sendEmail(email: string, subject: string, body: string, html?: string): Promise<any> {
+        console.log("SEND MAIL CALLED !");
         const msg = {
             to: email,
             from: process.env.SendGrid_from,
@@ -229,6 +230,7 @@ export class UploadService {
             text: body,
             html: html,
         };
+        console.log("SEND MAIL CREATED !");
         const response = await sgMail.send(msg);
         console.log("response",response)
         return response;
