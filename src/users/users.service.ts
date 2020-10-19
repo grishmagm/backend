@@ -102,20 +102,20 @@ export class UsersService {
             const response = await this.userModel.create(userData);
             console.log("CReated")
             if (response._id) {
-                const {body, subject, htmlData} = this.getEmailVerificationFields(verificationId);
-                const emailRes = await this.utilService.sendEmail(userData.email, subject, body, htmlData);
-                console.log(emailRes)
-                if (emailRes && emailRes.length > 0) {
-                    return {
-                      response_code: HttpStatus.CREATED,
-                        response_data:'Account created successfully. A verification link is sent your email, Please verify your email',
-                    };
-                } else {
+                //const {body, subject, htmlData} = this.getEmailVerificationFields(verificationId);
+                //const emailRes = await this.utilService.sendEmail(userData.email, subject, body, htmlData);
+                //console.log(emailRes)
+                //if (emailRes && emailRes.length > 0) {
+                //    return {
+                 //     response_code: HttpStatus.CREATED,
+                 //       response_data:'Account created successfully. A verification link is sent your email, Please verify your email',
+                 //   };
+                //} else {
                     return {
                         response_code: HttpStatus.CREATED,
                         response_data: {message: 'Account created successfully'},
                     };
-                }
+                //}
             }
         } else {
             return {
