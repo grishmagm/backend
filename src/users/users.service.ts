@@ -663,9 +663,10 @@ export class UsersService {
     public async pushNotificatioalToAllusers(data:PushNotificationDTO): Promise<CommonResponseModel> {
         try{
         const userData=await this.userModel.find({},'playerId')
+        console.log("USER DATA : "+userData+" DATA : "+data);
         let deviceArr:any=[]
          deviceArr= userData.map(element => element.playerId),
-         console.log(deviceArr);
+         console.log("Device DATA : "+deviceArr);
         deviceArr.forEach(function (value) {
                  GeneralService.orderPushNotification([value], data.mssg, data.title);
         });

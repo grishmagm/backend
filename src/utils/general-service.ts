@@ -87,6 +87,7 @@ module.exports = (function (app) {
     return newSetTimeArr
   }
   function orderPushNotification(device,message,title){
+    console.log("Push Notification called Device:"+ device);
       return new Promise(function(resolve,reject){
         var appID = process.env.OneSignalAppID;
         var secretKey=process.env.OneSignalSecretKey
