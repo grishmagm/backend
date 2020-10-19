@@ -76,6 +76,7 @@ export class UsersService {
             userData.email=userData.email.toLowerCase();
             const check = await this.userModel.findOne({email: userData.email});
             if (check) {
+                console.log("User exists")
                 return {response_code: HttpStatus.UNAUTHORIZED, response_data: `User with email ${userData.email} is already registered`};
             }
             if (userData.role === 'Admin') {
@@ -88,7 +89,7 @@ export class UsersService {
                 }
             }
             const {salt, hashedPassword} = await this.authService.hashPassword(userData.password);
-
+            console.log("Getting created")
             userData.salt = salt;
             userData.password = hashedPassword;
             userData.registrationDate = Date.now();
@@ -99,12 +100,14 @@ export class UsersService {
             const verificationId = uuid();
             userData.verificationId = verificationId;
             const response = await this.userModel.create(userData);
+            console.log("CReated")
             if (response._id) {
                 const {body, subject, htmlData} = this.getEmailVerificationFields(verificationId);
                 const emailRes = await this.utilService.sendEmail(userData.email, subject, body, htmlData);
+                console.log(emailRes)
                 if (emailRes && emailRes.length > 0) {
                     return {
-                        response_code: HttpStatus.CREATED,
+                      response_code: HttpStatus.CREATED,
                         response_data:'Account created successfully. A verification link is sent your email, Please verify your email',
                     };
                 } else {
