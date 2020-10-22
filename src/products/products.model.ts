@@ -48,6 +48,8 @@ export const ProductsSchema = new mongoose.Schema({
             productstock: Number,
             unit: String,
             price: Number,
+            mrp: Number,
+            tax: Number,
             enable: Boolean
         }
     ],
