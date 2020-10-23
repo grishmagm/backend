@@ -135,7 +135,7 @@ export class CartService {
             //cart.tax = product[0].variant[0].tax
            // cartInfo.tax +=Number((cart.tax).toFixed(2));
         });
-        cartInfo.tax = 5;
+        cartInfo.tax = 0;
         cartInfo.subTotal=Number(cartInfo.subTotal.toFixed(2));
         let couponCharge=0;
         if(cartInfo && cartInfo.couponInfo && cartInfo.couponInfo["couponDiscountAmount"]){
