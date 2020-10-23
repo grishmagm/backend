@@ -175,9 +175,13 @@ export class CartService {
         //finding price here
         let price;
         let originalPrice;
+        let ptax=0;
+        let mrp=0;
         for (let i = 0; i < productInfo.variant.length; i++) {
             if (productInfo.variant[i]['unit'] == cartData['unit']) {
                 price = Number(productInfo.variant[i]['price']);
+                ptax = Number(productInfo.variant[i]['tax']);
+                mrp = Number(productInfo.variant[i]['mrp']);
             }
         }
         //unit finding
@@ -204,6 +208,8 @@ export class CartService {
             filePath: productInfo.filePath,
             quantity: Number(cartData.quantity),
             imageUrl:productInfo.imageUrl,
+            tax:ptax,
+            mrp:mrp,
             price: originalPrice,
             productTotal: Number(originalPrice) * cartData.quantity,
             description: productInfo.description,

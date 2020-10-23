@@ -71,6 +71,8 @@ export interface CartModel {
     filePath: string;
     imageUrl:string;
     quantity: number;
+    tax: number;
+    mrp:number;
     price: number;
     productTotal: number;
     unit: string;
