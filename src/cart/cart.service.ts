@@ -131,8 +131,11 @@ export class CartService {
             cart.dealTotalAmount = (cart.dealAmountOneProd) * cart.quantity;
             cart.productTotal = Number(((cart.price-cart.dealAmountOneProd) * cart.quantity).toFixed(2));
             cartInfo.subTotal +=Number((cart.productTotal).toFixed(2));//Ampil
+            const product = this.productsModel.findOne({product_id: cart.productId})
+            cart.tax = product[0].variant[0].tax
+            cartInfo.tax +=Number((cart.tax).toFixed(2));
         });
-        cartInfo.tax = adminSettings.taxAmount;
+        
         cartInfo.subTotal=Number(cartInfo.subTotal.toFixed(2));
         let couponCharge=0;
         if(cartInfo && cartInfo.couponInfo && cartInfo.couponInfo["couponDiscountAmount"]){
