@@ -42,7 +42,7 @@ export class ProductsService {
         return {response_code: HttpStatus.OK, response_data: productInfo};
     }
     // creates a new product record
-    public async saveProduct(user: UsersDTO, productData: ProductsDTO, dealData: DealsDTO): Promise<CommonResponseModel> {
+    public async saveProduct(user: UsersDTO, productData: ProductsDTO): Promise<CommonResponseModel> {
         if (user.role !== 'Admin') {
             return {response_code: HttpStatus.UNAUTHORIZED, response_data: 'You are not allowed to create product'};
         }
