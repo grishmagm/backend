@@ -29,11 +29,11 @@ export class DealsService {
         if (user.role !== 'Admin') {
             return {response_code: HttpStatus.UNAUTHORIZED, response_data: 'You are not allowed to create deal.'};
         }
-        const dealExist = await this.dealsModel.findOne({name: dealData.name});
+        const dealExist = await this.dealsModel.findOne({_id: dealData._id});
         if (dealExist) {
             return {
                 response_code: HttpStatus.BAD_REQUEST,
-                response_data: `Deal with name ${dealData.name} exist. Provide a different name.`,
+                response_data: `Deal with name ${dealData._id} exist. Provide a different name.`,
             };
         } else {
             if(dealData.category==null ||  dealData.category==""){

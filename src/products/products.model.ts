@@ -30,10 +30,6 @@ export const ProductsSchema = new mongoose.Schema({
     delaPercent: {
         type: Number
     },
-    dealId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Deals'
-    },
     subcategory:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Subcategories'
@@ -122,10 +118,6 @@ export class ProductsDTO {
 
     @IsOptional()
     delaPercent: number;
-
-    @IsOptional()
-    @IsMongoId()
-    dealId: string ;
 
     // @IsNotEmpty()
     // @ApiModelProperty()

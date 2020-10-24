@@ -3,12 +3,7 @@ import {IsArray, IsDate, IsEmpty, IsEnum, IsMongoId, IsNotEmpty, IsNumber, IsOpt
 import {ApiModelProperty} from '@nestjs/swagger';
 
 export const DealsSchema = new mongoose.Schema({
-    name: {
-        type: String,
-    },
-    description: {
-        type: String,
-    },
+   
     delaPercent: {
         type: Number,
     },
@@ -23,22 +18,6 @@ export const DealsSchema = new mongoose.Schema({
     //Category or Product
     delalType:{
         type: String,
-    },
-    imageUrl: {
-        type: String,
-        required: true,
-    },
-    imageId: {
-        type: String,
-        required: true,
-    },
-    filePath:{
-        type: String
-    },
-    //top deal
-    topDeal: {
-        type: Boolean,
-        default: false,
     },
     status: {
         type: Number,
@@ -58,14 +37,6 @@ export class DealsDTO {
 
     @IsNotEmpty()
     @ApiModelProperty()
-    name: string;
-
-    @IsNotEmpty()
-    @ApiModelProperty()
-    description: string;
-
-    @IsNotEmpty()
-    @ApiModelProperty()
     delaPercent: number;
 
     @IsNotEmpty()
@@ -80,23 +51,6 @@ export class DealsDTO {
     @IsOptional()
     @ApiModelProperty()
     product: string;
-
-    @IsNotEmpty()
-    @IsUrl()
-    @ApiModelProperty()
-    imageUrl: string;
-
-    @IsNotEmpty()
-    @ApiModelProperty()
-    imageId: string;
-
-    @IsNotEmpty()
-    @ApiModelProperty()
-    filePath: string;
-
-    @IsNotEmpty()
-    @ApiModelProperty()
-    topDeal: boolean;
 
     @IsOptional()
     @IsNumber()
