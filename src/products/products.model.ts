@@ -25,10 +25,11 @@ export const ProductsSchema = new mongoose.Schema({
     // new deal section
     isDealAvailable: {
         type: Boolean,
-        default:false
+        default:true
     },
     delaPercent: {
-        type: Number
+        type: Number,
+        default: 0
     },
     subcategory:{
         type:mongoose.Schema.Types.ObjectId,
@@ -44,7 +45,6 @@ export const ProductsSchema = new mongoose.Schema({
             productstock: Number,
             unit: String,
             price: Number,
-            mrp: Number,
             tax: Number,
             enable: Boolean
         }
@@ -164,6 +164,7 @@ export class VariantData {
     productstock: Number;
     unit: String;
     price: Number;
+    tax: Number;
     enable: Boolean;
     offerAmount: number;
 }
@@ -183,6 +184,10 @@ export class VariantDTO {
     @ApiModelProperty()
     price: number;
 
+    @IsNumber()
+    @ApiModelProperty()
+    tax: number;
+
     @IsNotEmpty()
     @IsBoolean()
     @ApiModelProperty()
@@ -198,15 +203,15 @@ export class PuductStatusDTO {
     status: number;
 }
 
-export class DealProductDTO {
-    @IsOptional()
-    delaPercent: number;
+//export class DealProductDTO {
+  //  @IsOptional()
+   // delaPercent: number;
 
-    @IsOptional()
-    isDealAvailable: boolean;
+    //@IsOptional()
+    //isDealAvailable: boolean;
 
-    @IsOptional()
-    @IsMongoId()
-    dealId: string 
-}
+    //@IsOptional()
+    //@IsMongoId()
+    //dealId: string 
+//}
 
