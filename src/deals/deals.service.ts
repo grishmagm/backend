@@ -4,7 +4,7 @@ import {Model} from 'mongoose';
 import {DealsDTO, DealsStatusDTO} from './deals.model';
 import {CommonResponseModel} from '../utils/app-service-data';
 import {UsersDTO} from '../users/users.model';
-import {DealProductDTO} from '../products/products.model';
+//import {DealProductDTO} from '../products/products.model';
 //, @InjectModel('Products') private readonly productModel: Model<any>
 
 @Injectable()
