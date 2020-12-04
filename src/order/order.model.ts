@@ -154,7 +154,8 @@ export class OrderRatingDTO {
 
 enum PaymentType {
     COD = 'COD',
-    CARD = 'CARD'
+    CARD = 'CARD',
+    RAZORPAY = 'RAZORPAY'
 }
 
 export enum DeliveryType {
@@ -330,7 +331,7 @@ export class BuyNowDTO {
     // shouldCallBeforeDelivery: boolean;
 
     @IsNotEmpty()
-    @IsEnum(PaymentType, {message: 'Payment type should be CASH or COD or CARD'})
+    @IsEnum(PaymentType, {message: 'Payment type should be UPI or COD or CARD'})
     @ApiModelProperty()
     paymentType: string;
 

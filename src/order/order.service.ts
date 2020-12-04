@@ -204,6 +204,12 @@ export class OrderService {
                             return {response_code: HttpStatus.BAD_REQUEST, response_data: "something went wrong with payment"};
                         }
                     }
+                }
+                else if(order.paymentType === 'RAZORPAY'){
+                    console.log('----------------------------------Razor Pay in else if------------------------')
+                    let setting=await this.settingModel.findOne({},'currencyName');
+                    order.transactionDetails.transactionStatus="Paid";
+                    order.transactionDetails.currency=setting && setting.currencyName?setting.currencyName:"USD";
                 }else {
                     order.transactionDetails = null;
                 }
