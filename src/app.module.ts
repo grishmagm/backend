@@ -31,6 +31,16 @@ import { BusinessModule } from './business/business.module';
 import { SubcategoryModule } from './subcategory/subcategory.module';
 import { SeedModule } from './seed/seed.module';
 import { SequenceModule } from './sequence/sequence.module';
+import { BrandService } from './brand/brand.service';
+import { BrandController } from './brand/brand.controller';
+import { BrandModule } from './brand/brand.module';
+import { BrandseModule } from './brandse/brandse.module';
+
+
+
+
+
+
 
 
 @Global()
@@ -69,10 +79,12 @@ import { SequenceModule } from './sequence/sequence.module';
         MongooseModule.forFeature([{name: 'Orders', schema: OrderSchema},{name: 'Notifications', schema: NotificationsSchema}, {name: 'Chat', schema: ChatSchema}]),
         SeedModule,
         SequenceModule,
+        BrandModule,
+        BrandseModule,
         
     ],
-    controllers: [AppController],
-    providers: [AppGateway, ChatService],
+    controllers: [AppController, BrandController],
+    providers: [AppGateway, ChatService, BrandService],
     exports: [AppGateway]
 })
 export class AppModule {

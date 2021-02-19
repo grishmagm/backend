@@ -27,6 +27,7 @@ import {DeliveryTaxModule} from './delivery-tax-info/delivery-tax.module';
 import { BusinessModule } from './business/business.module';
 import { SubcategoryModule } from './subcategory/subcategory.module';
 import { SeedService} from './seed/seed.service';
+import { BrandModule } from './brand/brand.module';
 const Cron = require('cron').CronJob;
 
 
@@ -66,7 +67,7 @@ async function bootstrap() {
         }
     }
     const document = SwaggerModule.createDocument(app, options, {
-        include: [UsersModule, CategoriesModule, UploadModule, DealsModule, ProductsModule, AddressModule, FavouritesModule, OrderModule, CouponsModule, CardInformationModule, LocationsModule, CartModule, RatingModule,SettingModule, NotificationsModule, ProductstockModule, BannerModule,DeliveryTaxModule,BusinessModule,
+        include: [UsersModule, CategoriesModule,BrandModule, UploadModule, DealsModule, ProductsModule, AddressModule, FavouritesModule, OrderModule, CouponsModule, CardInformationModule, LocationsModule, CartModule, RatingModule,SettingModule, NotificationsModule, ProductstockModule, BannerModule,DeliveryTaxModule,BusinessModule,
             SubcategoryModule]
     });
     SwaggerModule.setup('/explorer', app, document);
